@@ -1,4 +1,4 @@
-(ns hgp.lawrence-add-on.lex-yacc-combined
+(ns active.lawrence-add-on.lex-yacc-combined
   (:require
     [active.ephemerol.char-set :refer :all]
     [active.ephemerol.regexp :refer :all]

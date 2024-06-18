@@ -1,4 +1,4 @@
-(ns hgp.lawrence-add-on.test-defs
+(ns active.lawrence-add-on.test-defs
   (:require [active.ephemerol.char-set :refer :all]
             [active.ephemerol.regexp :refer :all]
             [active.ephemerol.scanner :refer :all]
