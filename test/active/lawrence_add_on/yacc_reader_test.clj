@@ -7,5 +7,5 @@
             [active.ephemerol.scanner-run :refer :all]))
 
 (read-lex-yacc-eval "input.lang" calculator
-                    lang-scan :lr 'hgp.lawrence-add-on)
+                    lang-scan :lr 'active.lawrence-add-on)
 

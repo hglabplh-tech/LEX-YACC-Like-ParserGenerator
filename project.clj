@@ -1,4 +1,4 @@
-(defproject de.active-group/LEX-YACC-LawEphem "0.1.2-SNAPSHOT" ; version "1.0.0-SNAPSHOT
+(defproject hgp.parsergen/LEX-YACC-LawEphem "0.1.2-SNAPSHOT" ; version "1.0.0-SNAPSHOT
   :description "This generator is based on lawrence and ephemerol and simply simplifies and extends the functionality by connecting the project"
   :min-lein-version "2.0.0"
   :license {:name "Eclipse Public License"
@@ -9,8 +9,8 @@
    [org.clojure/core.async "1.6.681"]
    [de.active-group/active-clojure "0.42.2"]
    [de.active-group/active-data "0.2.0-SNAPSHOT"]
-   [de.active-group/lawrence-parse-gen "0.12.0-SNAPSHOT"]
-   [de.active-group/ephemerol-brain-scan "0.6.0-SNAPSHOT"]
+   [de.active-group/lawrence "0.12.0-SNAPSHOT"]
+   [de.active-group/ephemerol "0.6.0-SNAPSHOT"]
    [clojure-interop/apache-commons-io "1.0.0"]
    [com.ibm.icu/icu4j "75.1"]
    [com.ibm.icu/icu4j-charset "75.1"]]

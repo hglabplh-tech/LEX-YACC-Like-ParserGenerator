@@ -6,12 +6,11 @@
             [active.ephemerol.regexp   :refer :all]
             [active.ephemerol.scanner  :refer :all]
             [active.ephemerol.scanner-run :refer :all]))
+
 (defn input
   "Convert list of [token attribute-value] vectors to input."
   [g vs]
   (map (fn [[t av]]
-         ;;(rt/make-pair (gr/grammar-name->symbol t g)
-         ;;   av
          (rt/make-pair (gr/grammar-name->symbol t  g)
          av))
        vs))
@@ -33,7 +32,7 @@
 
 
 
-(defn def-complete-scan [sym-name-space this-scanner-spec
+(defn build-scan-result [sym-name-space this-scanner-spec
                          input]
 
   (let [scanner (compute-scanner this-scanner-spec)
@@ -47,24 +46,27 @@
         scan-one
         (string->list input)
         (make-position 1 0))
-    ]
+        the-enc  (apply list (scan-result-data scan-result))
+        the-rest (scan-result-input scan-result)
+        the-pos (scan-result-input-position scan-result)
+        real-scan-result [the-enc the-rest the-pos]]
+
     (println  "Scan Result output: ")
-    (println  (first scan-result))
-    (first scan-result)) )
+    (println real-scan-result)
+    real-scan-result))
 
 
-(defn execute-direct [sym-name-space this-scanner-spec
+(defn execute-scan-parse [sym-name-space this-scanner-spec
                       yacc-result input method]
 
 
-  (let [output (apply list (def-complete-scan sym-name-space
+  (let [[the-enc the-rest the-pos] (build-scan-result sym-name-space
                                        this-scanner-spec
-                                       input))]
+                                       input)]
 
 
 
     (println  "Scan Result: ")
-    (println  output)
-    (parse yacc-result method  output                           ;;(first scan-result)
-                                      ))
+    (println  the-enc)
+    (parse yacc-result method  the-enc))
   )

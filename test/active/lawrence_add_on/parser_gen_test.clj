@@ -7,6 +7,6 @@
             [active.lawrence-add-on.lex-yacc-combined :as ly-c]))
 
 
-(ly-c/execute-direct 'hgp.lawrence-add-on.parser-gen-test
+(ly-c/execute-direct 'active.lawrence-add-on.parser-gen-test
                   lang-scan calculator
                    "(9 * (10 ** (5 +4)))" ly-c/method-lr)
